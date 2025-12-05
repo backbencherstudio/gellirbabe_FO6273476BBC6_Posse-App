@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/caches/shared_preferences.dart';
+import '../../../data/resources/caches/shared_preferences.dart';
 import 'api_end_points.dart';
 import 'error_handle.dart';
 import 'response_handle.dart';
