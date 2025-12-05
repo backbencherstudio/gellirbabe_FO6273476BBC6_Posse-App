@@ -22,4 +22,8 @@ class AccountRepository {
   Future<ResponseModel> changeEmail({required String emailOrPhone}) async {
     return await accountRepo.changeEmail(emailOrPhone: emailOrPhone);
   }
+
+  Future<ResponseModel> deleteAccount() async {
+    return await accountRepo.deleteAccount();
+  }
 }

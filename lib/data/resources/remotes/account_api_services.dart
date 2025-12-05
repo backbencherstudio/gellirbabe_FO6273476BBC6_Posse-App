@@ -75,4 +75,20 @@ class AccountApiServices {
       return ResponseModel(success: false, message: '$e');
     }
   }
+   Future<ResponseModel> deleteAccount() async {
+    try {
+     
+      final data = await accoutRemote.deleteRequest(
+        endpoints: ApiEndpoints.deleteAccount,
+   
+      );
+      if (data["success"]) {
+        return ResponseModel(success: true, message: data["message"]);
+      } else {
+        return ResponseModel(success: false, message: data["message"]);
+      }
+    } catch (e) {
+      return ResponseModel(success: false, message: '$e');
+    }
+  }
 }

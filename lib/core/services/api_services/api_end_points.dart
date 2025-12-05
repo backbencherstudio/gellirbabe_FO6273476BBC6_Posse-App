@@ -19,31 +19,30 @@ class ApiEndpoints {
   static const String deleteAccount = 'accounts/delete-account';
 
   //===========================Posse===============================
+  static String ansNAnchorQuestion({required String id}) =>
+      'group/$id/questions';
+  static String posseQuestionNAns({required String id}) =>
+      'group/$id/questions';
+  static String getAllRequestByPosseId({required String id}) =>
+      'group/join-requests/$id';
+  static String acceptOrRejectMember({required String id}) =>
+      'group/join-request/$id';
+  static const String joinPosse = 'group/join/code';
+  static const String createPosse = 'group';
+  static String getAllPosse({required int page}) =>
+      'api/group?page=$page&limit=10';
+  static String getPosseById({required String id}) => 'group/$id';
+  static String leavePosse({required String id}) => 'group/$id/leave';
 
   //===========================Guess me===============================
   //===========================Weekly vibe check===============================
   //===========================Moods===============================
+  static const String getMoodType = 'moods/mood-types';
+  static const String createMood = 'moods';
+  static String moodStatus({required String id}) => 'moods/status/groups/$id';
+  static String todayMood({required String id}) => 'moods/status/groups/$id';
+  
   //===========================Vibe check===============================
 
-  // static const String createPosse = "api/group";
-  // static const String joinPosse = "api/group/join/code";
-  // static  String getAllPosse(int page) => "api/group?page=$page&limit=10";
-  // static String getPosseDetails(String id) => "api/group/$id";
-  // static String getRequestedMembersList(String id) =>
-  //     "api/group/join-requests/$id";
-  // static String acceptOrRejectMember(String id) => "api/group/join-request/$id";
-
-  // static const String getMoodType = "api/moods/mood-types";
-  // static const String createMood = "api/moods";
-  // static String getAllTodayMood(String id) => "api/moods/groups/$id";
-  // static String getMoodStatus(String id) => "api/moods/status/groups/$id";
-
-  // static String getVibeCheckQuestion(String id) =>
-  //     "api/groups/$id/vibe-checks/question";
-  // static String answerVibeCheckQuestion(String grpId, String postId) =>
-  //     "api/groups/$grpId/vibe-checks/$postId/answers";
-  // static String vibeCheckResultQuestion(String grpId, String postId) =>
-  //     "api/groups/$grpId/vibe-checks/$postId/results";
-  // static String vibeCheckHistory(String grpId) =>
-  //     "api/groups/$grpId/vibe-checks";
+ 
 }

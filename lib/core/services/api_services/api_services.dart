@@ -138,7 +138,7 @@ class ApiClient {
   }
 
   /// PATCH request
-  static Future<dynamic> deleteRequest({
+ Future<dynamic> deleteRequest({
     required String endpoints,
   }) async {
     try {
