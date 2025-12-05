@@ -35,14 +35,19 @@ class ApiEndpoints {
   static String leavePosse({required String id}) => 'group/$id/leave';
 
   //===========================Guess me===============================
-  //===========================Weekly vibe check===============================
+
+
   //===========================Moods===============================
   static const String getMoodType = 'moods/mood-types';
   static const String createMood = 'moods';
   static String moodStatus({required String id}) => 'moods/status/groups/$id';
   static String todayMood({required String id}) => 'moods/status/groups/$id';
-  
+
   //===========================Vibe check===============================
+      static String vibeQuestion({required String posseId}) => 'groups/$posseId/vibe-checks/question';
+      static String vibeQuestionAns({required String posseId,required String postId}) => 'groups/$posseId/vibe-checks/$postId/answers';
+      static String vibeHistory({required String posseId}) => 'groups/$posseId/vibe-checks';
+      static String vibeResult({required String posseId,required String postId}) => 'groups/$posseId/vibe-checks/$postId/results';
 
  
 }
