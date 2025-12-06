@@ -47,7 +47,6 @@ class RouteConfig {
   GoRouter goRouter = GoRouter(
     initialLocation: RouteName.splashScreen,
 
-
     routes: [
       GoRoute(
         name: RouteName.onboardingScreen,
@@ -122,11 +121,12 @@ class RouteConfig {
         name: RouteName.signUpOTPScreen,
         path: RouteName.signUpOTPScreen,
         pageBuilder: (context, state) {
+          final emailOrPhone = state.extra as String;
           return buildPageWithTransition(
             transitionType: PageTransitionType.slideRightToLeft,
             context: context,
             state: state,
-            child: SignupOtpScreen(),
+            child: SignupOtpScreen( emailOrPhone: emailOrPhone,),
           );
         },
       ),
@@ -404,8 +404,6 @@ class RouteConfig {
           //return const MaterialPage(child: TodayMoodMosaicScreen());
         },
       ),
-
-
     ],
   );
 }

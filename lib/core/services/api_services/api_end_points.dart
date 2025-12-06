@@ -35,6 +35,13 @@ class ApiEndpoints {
   static String leavePosse({required String id}) => 'group/$id/leave';
 
   //===========================Guess me===============================
+   static const String guessMeCategories = 'guess-me/categories';
+   static const String guessMeQuestion = 'guess-me/categories';
+   static  String guessMeSubmitAns ({required String posseId,required String postId}) =>'guess-me/quiz/$postId/groups/$posseId/submit';
+   static  String guessMeSubmitionStatus({required String posseId,required String postId}) =>'guess-me/quiz/$postId/groups/$posseId/my-submission';
+   static  String guessMeOtherMemberAns({required String posseId,required String postId}) =>'guess-me/quiz/$postId/groups/$posseId/members-answers';
+   static  String submitGuessMeQuestion({required String posseId,required String submissionId}) =>'guess-me/quiz/submissions/$submissionId/groups/$posseId/guess';
+   static  String guessResult({required String posseId,required String postId}) =>'guess-me/quiz/$postId/groups/$posseId/results';
 
 
   //===========================Moods===============================
