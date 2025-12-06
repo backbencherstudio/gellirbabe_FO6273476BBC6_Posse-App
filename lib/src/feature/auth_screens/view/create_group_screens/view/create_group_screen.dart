@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+
 import 'package:possy_app/core/constant/icons.dart';
 import 'package:possy_app/core/routes/route_name.dart';
 import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_color_pallete.dart';
 import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_input_decoration_theme.dart';
 import 'package:possy_app/src/common_widget_style/common_widgets/common_widgets.dart';
 import 'package:possy_app/src/feature/auth_screens/view/create_group_screens/view/widgets/group_option_tile.dart';
+import 'package:possy_app/src/feature/auth_screens/view/create_group_screens/view_model/create_group_provider.dart';
 
 class CreateGroupScreen extends StatefulWidget {
   const CreateGroupScreen({super.key});
@@ -89,6 +92,7 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                       ),
                       SizedBox(height: 12.h),
                       TextFormField(
+                        controller: _groupNameController,
                         decoration:
                             AuthInputDecorationTheme.lightInputDecorationTheme(
                               context: context,
@@ -96,13 +100,30 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                             ),
                       ),
                       SizedBox(height: 32.h),
-                      CommonWidgets.primaryButton(
-                        context: context,
-                        title: "Done",
-                        color: AuthColorPalette.primary,
-                        textColor: AuthColorPalette.white,
-                        onPressed: () {
-                          context.pushNamed(RouteName.congratulationScreen);
+                      Consumer(
+                        builder: (context, ref, child) {
+                          return CommonWidgets.primaryButton(
+                            context: context,
+                            title: "Done",
+                            color: AuthColorPalette.primary,
+                            textColor: AuthColorPalette.white,
+                            onPressed: () async {
+                              ref
+                                  .read(createOrJoinPosseProvider.notifier)
+                                  .createPosse(
+                                    name: _groupNameController.text,
+                                    type:
+                                        ref
+                                            .watch(createOrJoinPosseProvider)
+                                            .selectedLabel,
+                                  );
+
+                        
+                                context.pushNamed(
+                                  RouteName.congratulationScreen,
+                                );
+                            },
+                          );
                         },
                       ),
                     ],

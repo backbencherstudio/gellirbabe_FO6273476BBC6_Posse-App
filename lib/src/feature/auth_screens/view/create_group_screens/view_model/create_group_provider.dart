@@ -6,7 +6,7 @@ import 'package:possy_app/src/feature/auth_screens/view/create_group_screens/mod
 
 import '../../../../../../data/repository/posse_repository.dart';
 
-final createOrJoinProvider =
+final createOrJoinPosseProvider =
     StateNotifierProvider<CreateGroupProvider, CreateGroupModel>(
       (ref) => CreateGroupProvider(posseRep: PosseRepository(posseRepo: PosseApiServices(posseRemote: ApiClient()))),
     );

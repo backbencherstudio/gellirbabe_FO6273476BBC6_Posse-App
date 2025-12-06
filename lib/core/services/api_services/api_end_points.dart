@@ -36,7 +36,7 @@ class ApiEndpoints {
 
   //===========================Guess me===============================
    static const String guessMeCategories = 'guess-me/categories';
-   static const String guessMeQuestion = 'guess-me/categories';
+   static  String guessMeQuestion  ({required String categoryId}) => 'guess-me/quiz/categories/$categoryId';
    static  String guessMeSubmitAns ({required String posseId,required String postId}) =>'guess-me/quiz/$postId/groups/$posseId/submit';
    static  String guessMeSubmitionStatus({required String posseId,required String postId}) =>'guess-me/quiz/$postId/groups/$posseId/my-submission';
    static  String guessMeOtherMemberAns({required String posseId,required String postId}) =>'guess-me/quiz/$postId/groups/$posseId/members-answers';

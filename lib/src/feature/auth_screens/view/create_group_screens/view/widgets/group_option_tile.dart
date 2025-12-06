@@ -17,9 +17,9 @@ Widget groupOptionTile({
 
   return Consumer(
     builder: (context, ref, child) {
-      final selectedLabel = ref.watch(createOrJoinProvider).selectedLabel;
+      final selectedLabel = ref.watch(createOrJoinPosseProvider).selectedLabel;
       final isSelected = selectedLabel == label;
-      final notifier = ref.read(createOrJoinProvider.notifier);
+      final notifier = ref.read(createOrJoinPosseProvider.notifier);
 
       return GestureDetector(
         onTap: () {
