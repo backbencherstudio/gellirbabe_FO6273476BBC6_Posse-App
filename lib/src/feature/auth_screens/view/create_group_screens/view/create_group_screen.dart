@@ -5,6 +5,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:possy_app/core/constant/icons.dart';
 import 'package:possy_app/core/routes/route_name.dart';
+import 'package:possy_app/core/theme/src/theme_extension/color_pallete.dart';
+import 'package:possy_app/core/utils/utils.dart';
 import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_color_pallete.dart';
 import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_input_decoration_theme.dart';
 import 'package:possy_app/src/common_widget_style/common_widgets/common_widgets.dart';
@@ -108,20 +110,35 @@ class _CreateGroupScreenState extends State<CreateGroupScreen> {
                             color: AuthColorPalette.primary,
                             textColor: AuthColorPalette.white,
                             onPressed: () async {
-                              ref
-                                  .read(createOrJoinPosseProvider.notifier)
-                                  .createPosse(
-                                    name: _groupNameController.text,
-                                    type:
-                                        ref
-                                            .watch(createOrJoinPosseProvider)
-                                            .selectedLabel,
+                              if (ref
+                                      .watch(createOrJoinPosseProvider)
+                                      .selectedLabel !=
+                                  '') {
+                                    
+                                final res = await ref
+                                    .read(createOrJoinPosseProvider.notifier)
+                                    .createPosse(
+                                      name: _groupNameController.text,
+                                      type:
+                                          ref
+                                              .watch(createOrJoinPosseProvider)
+                                              .selectedLabel,
+                                    );
+                                if (res.isSuccess) {
+                                  Utils.showToast(
+                                    message: res.message,
+                                    backgroundColor: AppColor.notifyRed,
                                   );
-
-                        
-                                context.pushNamed(
-                                  RouteName.congratulationScreen,
+                                  context.pushNamed(
+                                    RouteName.congratulationScreen,
+                                  );
+                                }
+                              } else {
+                                Utils.showToast(
+                                  message: "Opps! Enter Posse Type",
+                                  backgroundColor: AppColor.notifyRed,
                                 );
+                              }
                             },
                           );
                         },

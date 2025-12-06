@@ -14,10 +14,13 @@ final createOrJoinPosseProvider =
 class CreateGroupProvider extends StateNotifier<CreateGroupModel> {
   PosseRepository posseRep;
 
-  CreateGroupProvider({required this.posseRep}) : super(CreateGroupModel());
+  CreateGroupProvider({required this.posseRep}) : super(CreateGroupModel(selectedLabel: '', isLoading: false));
 
   void selectLabel(String label) {
     state = state.copyWith(selectedLabel: label);
+  }
+  void checkLoading() {
+    state = state.copyWith(isLoading: !state.isLoading);
   }
    Future<ResponseModel> joinPosse({required String code}) async {
     return await posseRep.joinPosse(code: code);

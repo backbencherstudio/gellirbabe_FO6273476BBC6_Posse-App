@@ -1,9 +1,10 @@
 class CreateGroupModel {
   final String selectedLabel;
+  final bool isLoading;
 
-  CreateGroupModel({this.selectedLabel =''});
+  CreateGroupModel({ required this.selectedLabel ,required this.isLoading});
 
-  CreateGroupModel copyWith({String? selectedLabel}) {
-    return CreateGroupModel(selectedLabel: selectedLabel ?? this.selectedLabel);
+  CreateGroupModel copyWith({String? selectedLabel,bool?isLoading}) {
+    return CreateGroupModel(selectedLabel: selectedLabel ?? this.selectedLabel, isLoading:isLoading??this.isLoading);
   }
 }
