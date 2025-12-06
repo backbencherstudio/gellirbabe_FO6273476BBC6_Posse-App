@@ -9,23 +9,23 @@ import '../../models/single_posse_group_model.dart';
 class PosseApiServices {
   ApiClient posseRemote;
   PosseApiServices({required this.posseRemote});
-  Future<ResponseModel> ansAnchorQuestion({required String posseId, required String ans}) async {
+  Future<ResponseModel> ansAnchorQuestion({
+    required String posseId,
+    required String ans,
+  }) async {
     try {
-      final body = {
-        "group_id": posseId,
-        "answer": ans,
-      };
+      final body = {"group_id": posseId, "answer": ans};
       final res = await posseRemote.postRequest(
         endpoints: ApiEndpoints.ansNAnchorQuestion(id: posseId),
         body: body,
       );
       if (res['success']) {
-        return ResponseModel(success: true, message: res['message']);
+        return ResponseModel(isSuccess: true, message: res['message']);
       } else {
-        return ResponseModel(success: false, message: res['message']);
+        return ResponseModel(isSuccess: false, message: res['message']);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -62,12 +62,12 @@ class PosseApiServices {
         body: body,
       );
       if (res['success']) {
-        return ResponseModel(success: true, message: res['message']);
+        return ResponseModel(isSuccess: true, message: res['message']);
       } else {
-        return ResponseModel(success: false, message: res['message']);
+        return ResponseModel(isSuccess: false, message: res['message']);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -79,12 +79,12 @@ class PosseApiServices {
         body: body,
       );
       if (res['success']) {
-        return ResponseModel(success: true, message: res['message']);
+        return ResponseModel(isSuccess: true, message: res['message']);
       } else {
-        return ResponseModel(success: false, message: res['message']);
+        return ResponseModel(isSuccess: false, message: res['message']);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -99,12 +99,12 @@ class PosseApiServices {
         body: body,
       );
       if (res['success']) {
-        return ResponseModel(success: true, message: res['message']);
+        return ResponseModel(isSuccess: true, message: res['message']);
       } else {
-        return ResponseModel(success: false, message: res['message']);
+        return ResponseModel(isSuccess: false, message: res['message']);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -156,12 +156,12 @@ class PosseApiServices {
         body: body,
       );
       if (res['success']) {
-        return ResponseModel(success: true, message: res['message']);
+        return ResponseModel(isSuccess: true, message: res['message']);
       } else {
-        return ResponseModel(success: false, message: res['message']);
+        return ResponseModel(isSuccess: false, message: res['message']);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 }

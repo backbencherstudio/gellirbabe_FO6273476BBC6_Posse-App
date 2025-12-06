@@ -31,12 +31,12 @@ class AccountApiServices {
         body: body,
       );
       if (data["success"]) {
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -50,12 +50,12 @@ class AccountApiServices {
         formData: formData,
       );
       if (data["success"]) {
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -67,28 +67,27 @@ class AccountApiServices {
         body: body,
       );
       if (data["success"]) {
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
-   Future<ResponseModel> deleteAccount() async {
+
+  Future<ResponseModel> deleteAccount() async {
     try {
-     
       final data = await accoutRemote.deleteRequest(
         endpoints: ApiEndpoints.deleteAccount,
-   
       );
       if (data["success"]) {
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 }

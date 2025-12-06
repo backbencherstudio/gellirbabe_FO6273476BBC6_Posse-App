@@ -1,5 +1,5 @@
 class ResponseModel {
-  bool success;
+  bool isSuccess;
   String message;
-  ResponseModel({required this.success, required this.message});
+  ResponseModel({required this.isSuccess, required this.message});
 }

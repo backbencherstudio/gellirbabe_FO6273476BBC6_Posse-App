@@ -12,6 +12,7 @@ class CommonWidgets {
   static Widget primaryButton({
     required BuildContext context,
     required String title,
+     bool isLoading=false,
     required Color color,
     required Color textColor,
     required VoidCallback onPressed,
@@ -31,7 +32,7 @@ class CommonWidgets {
           elevation: 0,
           splashFactory: NoSplash.splashFactory,
         ),
-        child: Text(
+        child:isLoading?CircularProgressIndicator(): Text(
           title,
           style: textTheme ?? bodyLarge?.copyWith(
             color:

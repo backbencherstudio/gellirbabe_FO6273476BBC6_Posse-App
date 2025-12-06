@@ -26,12 +26,12 @@ class AuthApiServices {
         body: body,
       );
       if (data["success"]) {
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -48,12 +48,12 @@ class AuthApiServices {
       if (data["success"]) {
         await SharedPreferenceData.setToken(data["token"]);
         await ApiClient.headerSet();
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -70,12 +70,12 @@ class AuthApiServices {
       if (data["success"]) {
         await SharedPreferenceData.setToken(data["token"]);
         await ApiClient.headerSet();
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -87,12 +87,12 @@ class AuthApiServices {
         body: body,
       );
       if (data["success"]) {
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -109,12 +109,12 @@ class AuthApiServices {
       if (data["success"]) {
         await SharedPreferenceData.setToken(data["token"]);
         await ApiClient.headerSet();
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -126,12 +126,12 @@ class AuthApiServices {
         body: body,
       );
       if (data["success"]) {
-        return ResponseModel(success: true, message: data["message"]);
+        return ResponseModel(isSuccess: true, message: data["message"]);
       } else {
-        return ResponseModel(success: false, message: data["message"]);
+        return ResponseModel(isSuccess: false, message: data["message"]);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 }

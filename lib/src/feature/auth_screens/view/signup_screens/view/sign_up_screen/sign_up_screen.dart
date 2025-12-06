@@ -1,18 +1,10 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:possy_app/core/constant/images.dart';
 import 'package:possy_app/core/constant/padding.dart';
 import 'package:possy_app/core/routes/route_name.dart';
 import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_color_pallete.dart';
-import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_input_decoration_theme.dart';
-import 'package:possy_app/src/common_widget_style/common_widgets/common_widgets.dart';
 import 'package:possy_app/src/feature/auth_screens/view/signup_screens/view/sign_up_screen/parts/signup_input_content.dart';
-import 'package:possy_app/src/feature/auth_screens/view/signup_screens/view_model/sign_up_provider.dart';
-
 import '../../../../../../../core/constant/icons.dart';
 import '../../../auth_widgets/footer_text.dart';
 import '../../../signin_screens/view/widgets/custom_login_button.dart';
@@ -60,7 +52,8 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               /// input content
-              signupInputContent(context: context),
+             // signupInputContent(context: context),
+             SignupInputContent(),
 
               /// "or" separator
               Row(

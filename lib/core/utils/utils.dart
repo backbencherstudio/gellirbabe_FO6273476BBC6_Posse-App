@@ -1,17 +1,32 @@
-import 'dart:ffi';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:possy_app/core/constant/icons.dart';
-import 'package:possy_app/src/common_widget_style/common_style/timeline_style/timeline_color.dart';
-import 'package:possy_app/src/common_widget_style/common_widgets/common_widgets.dart';
+
 import 'package:possy_app/src/common_widget_style/common_widgets/spacer/auto_spacer.dart';
 
 import '../theme/src/theme_extension/color_pallete.dart';
 
 class Utils {
+    static void showToast({
+    required String message,
+    required Color backgroundColor,
+ Color textColor=AppColor.lightGreen,
+  }) {
+    Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: backgroundColor,
+      textColor: textColor,
+      fontSize: 16.0,
+    );
+  }
   static void showSnackBar(
     String message,
     BuildContext context, {

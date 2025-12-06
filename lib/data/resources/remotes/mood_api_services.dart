@@ -14,12 +14,12 @@ class MoodApiServices {
         endpoints: ApiEndpoints.moodStatus(id: posseId),
       );
       if (res['success']) {
-        return ResponseModel(success: true, message: res['message']);
+        return ResponseModel(isSuccess: true, message: res['message']);
       } else {
-        return ResponseModel(success: false, message: res['message']);
+        return ResponseModel(isSuccess: false, message: res['message']);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
@@ -53,12 +53,12 @@ class MoodApiServices {
         body: body,
       );
       if (res['success']) {
-        return ResponseModel(success: true, message: res['message']);
+        return ResponseModel(isSuccess: true, message: res['message']);
       } else {
-        return ResponseModel(success: false, message: res['message']);
+        return ResponseModel(isSuccess: false, message: res['message']);
       }
     } catch (e) {
-      return ResponseModel(success: false, message: '$e');
+      return ResponseModel(isSuccess: false, message: '$e');
     }
   }
 
