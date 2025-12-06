@@ -1,15 +1,9 @@
-  import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:possy_app/core/routes/route_name.dart';
 import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_color_pallete.dart';
-import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_input_decoration_theme.dart';
 import 'package:possy_app/src/common_widget_style/common_widgets/common_widgets.dart';
-import 'package:possy_app/src/feature/auth_screens/view/auth_widgets/footer_text.dart';
-
-import '../../../../../../core/constant/images.dart';
-
 class CreateOrJoinScreen extends StatelessWidget {
   const CreateOrJoinScreen({super.key});
 
@@ -70,6 +64,7 @@ class CreateOrJoinScreen extends StatelessWidget {
                       color: AuthColorPalette.primary,
                       textColor: AuthColorPalette.white,
                       onPressed: () {
+                        
                         context.go(RouteName.createGroupScreen);
                       },
                     ),

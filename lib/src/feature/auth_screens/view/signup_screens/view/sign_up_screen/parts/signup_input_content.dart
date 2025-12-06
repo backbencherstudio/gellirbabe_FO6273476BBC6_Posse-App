@@ -29,6 +29,16 @@ class _SignupInputContentState extends ConsumerState<SignupInputContent> {
   final TextEditingController conPasswordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
+  void dispose() {
+    nameController.dispose();
+    emailOrPhoneController.dispose();
+    dobController.dispose();
+    passwordController.dispose();
+    conPasswordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final notifier = ref.read(signUpProvider.notifier);
     final watch = ref.watch(signUpProvider);
@@ -173,7 +183,10 @@ class _SignupInputContentState extends ConsumerState<SignupInputContent> {
                       backgroundColor: AppColor.successColor,
                     );
 
-                    context.pushNamed(RouteName.signUpOTPScreen);
+                    context.pushNamed(
+                      RouteName.signUpOTPScreen,
+                      extra: emailOrPhoneController.text.trim(),
+                    );
                   } else {
                     Utils.showToast(
                       message: res.message,

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:possy_app/core/constant/icons.dart';
 import 'package:possy_app/core/routes/route_name.dart';
-import 'package:possy_app/core/utils/utils.dart';
 import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_color_pallete.dart';
 import 'package:possy_app/src/common_widget_style/common_style/auth_style/auth_input_decoration_theme.dart';
 import 'package:possy_app/src/common_widget_style/common_widgets/common_widgets.dart';

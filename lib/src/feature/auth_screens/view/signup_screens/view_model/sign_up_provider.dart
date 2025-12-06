@@ -49,4 +49,11 @@ class SignUpProvider extends StateNotifier<SignUpModel> {
       password: password,
     );
   }
+
+  Future<ResponseModel> verifyRegister({
+    required String emailOrPhone,
+    required String otp,
+  }) async {
+    return await authRepository.verifyRegister(emailOrPhone: emailOrPhone, otp: otp);
+  }
 }

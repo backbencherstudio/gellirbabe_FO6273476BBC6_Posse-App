@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,9 +17,9 @@ Widget groupOptionTile({
 
   return Consumer(
     builder: (context, ref, child) {
-      final selectedLabel = ref.watch(createGroupProvider).selectedLabel;
+      final selectedLabel = ref.watch(createOrJoinProvider).selectedLabel;
       final isSelected = selectedLabel == label;
-      final notifier = ref.read(createGroupProvider.notifier);
+      final notifier = ref.read(createOrJoinProvider.notifier);
 
       return GestureDetector(
         onTap: () {
@@ -40,7 +42,6 @@ Widget groupOptionTile({
           ),
           child: Row(
             children: [
-              // ignore: deprecated_member_use
               SvgPicture.asset(
                 iconImage,
                 height: 24.h,
